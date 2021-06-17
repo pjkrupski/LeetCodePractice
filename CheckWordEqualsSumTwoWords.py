@@ -1,29 +1,6 @@
-# Anything is possible
 """
-# Functional solution
-def is_sum_equal(first_word, second_word, target_word):
-    i = "099"
-    convert_words("f")
-    print(strip_leading_zeros(i))
-
-
-def add_words(first_word, second_word):
-    return first_word, second_word
-
-
-def convert_words(word):
-    print("hello")
-    return word
-
-
-def strip_leading_zeros(word):
-    if word[0] == 0:
-        word = word[1:len(word)]
-    return word
-
-# Main
-
-is_sum_equal("d", "d", "dd")
+Check if the sum of the numeric representations of two words is equal 
+to the numeric representation of a third word
 """
 
 
