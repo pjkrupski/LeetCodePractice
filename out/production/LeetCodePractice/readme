@@ -1,0 +1,5 @@
+This is a collection of LeetCode problem solutions coded in both Java, Python, and JavaScript
+
+Answers have been submitted through the LeetCode site before posting to github to ensure 
+correctness however there may be several possible optimizations to these soltions in terms 
+of runtime complexity, space complexity, and code simplification
