@@ -38,7 +38,9 @@ n == accounts[i].length
 */
 
 public class RichestCustomerWealth {
-
+    public static void main(String[] args) {
+        System.out.println("test");
+    }
       public int maximumWealth(int[][] accounts) {
         int sum = 0;
         int tempSum = 0;
