@@ -30,6 +30,12 @@ class ReverseInteger {
         boolean negative = false;
         StringBuilder sb = new StringBuilder();
         
+        //Smallest Value edge case
+        if(x == -2147483648){
+            return 0;           
+        }
+        
+        //Negative Check
         if(x < 0){
             x *= -1;
             negative = true;
@@ -50,13 +56,14 @@ class ReverseInteger {
             return 0;
         } 
         
+        
         //Convert to neg or pos int if sb is within bounds
         if(negative){
-            x *= -1 * Integer.parseInt(sb.toString());
+            x = -1 * Integer.parseInt(sb.toString());
         } else {
             x = Integer.parseInt(sb.toString());
         }
-      
+          
         return x;
     }
 }
@@ -73,5 +80,7 @@ class ReverseInteger {
 120
 1534236469
 1999999999
+-900000
+-2147483648
 
 */
