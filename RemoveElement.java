@@ -49,7 +49,7 @@ Constraints:
 0 <= val <= 100
 
 */
-
+import java.util.*;
 class RemvoeElement {
     public int removeElement(int[] nums, int val) {
         int element = 0;

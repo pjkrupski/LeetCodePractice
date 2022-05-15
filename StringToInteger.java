@@ -64,7 +64,7 @@ s consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+
 
 */
 
-
+import java.util.*;
 class StringToInteger {
     public int myAtoi(String s) {
         Map<Character, Integer> charToInt = new HashMap<Character, Integer>();

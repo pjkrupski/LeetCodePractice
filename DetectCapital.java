@@ -23,6 +23,7 @@ Constraints:
 1 <= word.length <= 100
 word consists of lowercase and uppercase English letters.
  */
+import java.util.*;
 class DetectCapital {
     public boolean detectCapitalUse(String word) {
         Set<Character> caps = new HashSet<Character>();

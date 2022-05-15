@@ -8,7 +8,7 @@
 
  */
 import java.util.*;
-class Solution {
+class RemoveDuplocatesReturnSorted {
     public String removeDuplicateLetters(String s) {
         StringBuilder sb = new StringBuilder();
         Set set = new HashSet();
