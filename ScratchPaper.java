@@ -5,17 +5,12 @@ public class ScratchPaper {
     static List<Character> current;
     public static void main(String [] args){
         Set<String> set = new HashSet<String>();
-        char[] array = {'a', 'b', 'c','d'};
-        String[] letters = {"a","b","c","d"};
-        String str = "abc";
-        //System.out.println(powerSet(array, array.length).toString());
-        //set.addAll(powerSet(array));
-        //set.addAll(combinations(array));
-        //System.out.println(set.toString());
-       // System.out.println(permutations(array));
-        List<List<Character>> temp = combination(array,array.length, 3);
+        char[] array = {'(','(', '(', ')',')', ')'};
+        List<List<Character>> temp = combination(array,array.length, 6);
+        List<String> perms = permutations(array);
+        System.out.println(perms.toString());
         for(int i =0; i < temp.size(); i++){
-            System.out.println(temp.get(i).toString());
+            //System.out.println(temp.get(i).toString());
         }
     }
 
@@ -37,7 +32,7 @@ public class ScratchPaper {
             current.remove(current.size() - 1);
         }
     }
-    
+
 
     static List<String> powerSet(char [] chars){
         StringBuilder sb;
