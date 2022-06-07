@@ -1,7 +1,10 @@
 package DataStructures;
 import java.util.*;
+//Reference for dfs algos
+//https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
 public class BinaryTree {
     Node root;
+    static boolean found = false;
     public BinaryTree(Node root) {
         this.root = root;
     }
@@ -56,7 +59,7 @@ public class BinaryTree {
         }
     }
     //Time Complexity: O(n)
-    public Node depthFirstSearch(int target, String order){
+    public void depthFirstSearch(int target, String order){
         switch(order){
             case "postorder":
                 postOrder(this.root, target);
@@ -70,47 +73,109 @@ public class BinaryTree {
             default:
                 System.out.println("Invalid search option");
         }
-        return null;
+        found = false;
     }
 
+    /**
+    Global boolean used to end recursive searching for all 3 depth first traversals
+    returning the node has no effect, once the correct number is found the algorithm
+    would continue to traverse the entire tree otherwise
+    Returning the node all the way to main results in trees root being returned
+     */
+
+    /**
+     *    Algorithm Postorder(tree)
+     *    1. Traverse the left subtree, i.e., call Postorder(left-subtree)
+     *    2. Traverse the right subtree, i.e., call Postorder(right-subtree)
+     *    3. Visit the root.
+     */
     static void postOrder(Node node, int target) {
         if (node == null)
             return;
-        postOrder(node.left, target);
-        postOrder(node.right, target);
-        System.out.println(node.data + " ");
-        if(node.data == target) {
-            System.out.println("Node data: "+node.data+" found to equal target: "+target);
+        System.out.println(node.data + " Traversed");
+
+        if(!found){
+            postOrder(node.left, target);
         }
 
+        if(!found){
+            postOrder(node.right, target);
+        }
+
+        System.out.println("Checking "+node.data);
+        if(node.data == target) {
+            System.out.println("Node data: "+node.data+" found to equal target: "+target);
+            found = true;
+        }
     }
 
+    /**
+     * Algorithm Inorder(tree)
+     *    1. Traverse the left subtree, i.e., call Inorder(left-subtree)
+     *    2. Visit the root.
+     *    3. Traverse the right subtree, i.e., call Inorder(right-subtree)
+     */
     static void inOrder(Node node, int target) {
         if (node == null)
             return;
-        inOrder(node.left, target);
-        System.out.println(node.data + " ");
-        //Should if statement be at bottom of function?
+        System.out.println(node.data + " Traversed");
+
+        if(!found){
+            inOrder(node.left, target);
+        }
+
+        System.out.println("Checking "+node.data);
         if(node.data == target) {
             System.out.println("Node data: "+node.data+" found to equal target: "+target);
+            found = true;
         }
-        inOrder(node.right, target);
+
+        if(!found){
+            inOrder(node.right, target);
+        }
     }
 
+    /**
+     * Algorithm Preorder(tree)
+     *    1. Visit the root.
+     *    2. Traverse the left subtree, i.e., call Preorder(left-subtree)
+     *    3. Traverse the right subtree, i.e., call Preorder(right-subtree)
+     */
     static void preOrder(Node node, int target) {
         if (node == null)
             return;
-        System.out.println(node.data + " ");
+        System.out.println("Traversing and checking "+node.data);
         if(node.data == target) {
             System.out.println("Node data: "+node.data+" found to equal target: "+target);
+            found = true;
             return;
         }
-        preOrder(node.left, target);
-        if(node.data == target) {
+        if(!found){
+            preOrder(node.left, target);
+        }
+        if(!found){
+            preOrder(node.right, target);
+        }
+    }
+
+    public void search(int target){
+        locate(this.root, target);
+    }
+
+    static void locate(Node node, int target){
+        if(node == null){
+            System.out.println("NULL LEAF");
+            return;
+        }
+        System.out.println(node.data);
+        if(node.data == target){
             System.out.println("Node data: "+node.data+" found to equal target: "+target);
-            return;
         }
-        preOrder(node.right, target);
+        if(node.data > target){
+            locate(node.left, target);
+        }else if(node.data < target){
+            locate(node.right, target);
+        }
     }
 
     public void delete(int data){

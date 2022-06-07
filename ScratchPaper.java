@@ -4,15 +4,14 @@ public class ScratchPaper {
     static List<List<Character>> ans;
     static List<Character> current;
     public static void main(String [] args){
-        Set<String> set = new HashSet<String>();
+        Set<List<Character>> set = new HashSet<>();
+
         char[] array = {'(','(', '(', ')',')', ')'};
-        List<List<Character>> temp = combination(array,array.length, 6);
-        List<String> perms = permutations(array);
-        System.out.println(perms.toString());
-        for(int i =0; i < temp.size(); i++){
-            //System.out.println(temp.get(i).toString());
-        }
+        char[] abc = {'a','b', 'c'};
+        char[] abd = {'a','b', 'c'};
+        List<String> perms = permutations(abc);
     }
+
 
     //https://leetcode.com/problems/combinations/discuss/2030259/Easy-Faster-Efficient-Java-Soln
     static List<List<Character>> combination(char[] chars, int n, int k) {
@@ -85,6 +84,12 @@ public class ScratchPaper {
         }
 
         return partial;
+    }
+
+
+    static List<String> permutations(char[] str, int n) {
+        List<String> perms = new ArrayList<>();
+        return perms;
     }
 
     static List<Integer> subStrings(){
