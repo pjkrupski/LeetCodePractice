@@ -9,8 +9,6 @@ import java.util.List;
 import java.util.Set;
 
 public class Permutation {
-    static int num = 0;
-    static List<List<Integer>> mat = new ArrayList<>();
     static Set<List<Integer>> set = new HashSet();
 
     public static void main(String args[]) {

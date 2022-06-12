@@ -11,8 +11,6 @@ public class ScratchPaper {
         char[] abd = {'a','b', 'c'};
         List<String> perms = permutations(abc);
     }
-
-
     //https://leetcode.com/problems/combinations/discuss/2030259/Easy-Faster-Efficient-Java-Soln
     static List<List<Character>> combination(char[] chars, int n, int k) {
         ans = new ArrayList<>();
