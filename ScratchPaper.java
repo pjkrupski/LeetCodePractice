@@ -9,6 +9,9 @@ public class ScratchPaper {
         char[] array = {'(','(', '(', ')',')', ')'};
         char[] abc = {'a','b', 'c'};
         char[] abd = {'a','b', 'c'};
+        String s = "abc$#@d*(aefg@";
+        s = s.replaceAll("[^a-z]", "");
+        System.out.println(s);
         List<String> perms = permutations(abc);
     }
     //https://leetcode.com/problems/combinations/discuss/2030259/Easy-Faster-Efficient-Java-Soln
